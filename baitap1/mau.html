@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SNT</title>
+</head>
+<body>
+<input type="text" id="nhap so">
+<input type="button" value="kiem tra" onclick="soNguyenTo()">
+<h1>Kiểm tra số nguyên </h1>
+<script>
+    function isPrime(number){
+        if (number < 1) return false
+        else if (number ===2) return true
+        else if (number %2 === 0) return false
+        else {
+            for (let i = 3; i < number; i++) {
+                if (number % i === 0){
+                    return false
+                }
+            }
+        }
+        return true
+    }
+    function soNguyenTo(){
+        let so = document.getElementById('nhap so')
+        let kiemTra = isPrime(so.value)
+        if (kiemTra){
+            alert(so.value + 'la 1 so nguyen to')
+        } else {
+            alert(so.value + 'khong phai so nguyen to')
+        }
+    }
+</script>
+</body>
+</html>
